@@ -12,9 +12,9 @@ body {
   background: #1e293b;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(128, 0, 255, 0.6);
   width: 90%;
   max-width: 320px;
+  animation: glow 3s linear infinite;
 }
 
 #display {
@@ -37,7 +37,7 @@ body {
 
 button {
   padding: 20px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   border: none;
   border-radius: 12px;
   background: #475569;
@@ -50,6 +50,10 @@ button:hover {
   background: #64748b;
 }
 
+button:active {
+  transform: scale(0.9);
+}
+
 .equals {
   grid-column: span 2;
   background: rgb(128, 0, 255);
@@ -57,4 +61,16 @@ button:hover {
 
 .equals:hover {
   background: rgb(100, 0, 200);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 30px rgba(128, 0, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 100px rgba(128, 0, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(128, 0, 255, 0.6);
+  }
 }
